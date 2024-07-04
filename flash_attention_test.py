@@ -31,15 +31,12 @@ sequence_length = 32
 batch_size = 1
 d_model = 32
 sequence = torch.randn(batch_size, n_head, sequence_length, d_model).cuda()
-
-    # 准备查询、键和值
+# 准备查询、键和值
 q = sequence
 k = sequence
 v = sequence
 
 
-
-# 测试使用缓存
 start_time = time.time()
 for i in range(2):
     out = model.forward(q, k, v)

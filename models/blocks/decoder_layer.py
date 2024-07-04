@@ -4,12 +4,11 @@ from torch import nn
 from models.layers.layer_norm import LayerNorm
 from models.layers.multi_head_attention import MultiHeadAttention
 from models.layers.position_wise_feed_forward import PositionwiseFeedForward
-from models.layers.kvcache import KVcache_MultiHeadAttention
 
 class DecoderLayer(nn.Module):
     def __init__(self, d_model, ffn_hidden, n_head, drop_prob):
         super(DecoderLayer, self).__init__()
-        self.self_attention = KVcache_MultiHeadAttention(d_model=d_model, n_head=n_head)
+        self.self_attention = MultiHeadAttention(d_model=d_model, n_head=n_head)
         self.norm1 = LayerNorm(d_model=d_model)
 
         self.enc_dec_attention = MultiHeadAttention(d_model=d_model, n_head=n_head)
