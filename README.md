@@ -30,7 +30,6 @@
 
 ```bash
 conda create -n mv python=3.10
-conda activate mv
 source activate mv
 ```
 
