@@ -1,11 +1,6 @@
-"""
-@author : Hyunwoong
-@when : 2019-10-29
-@homepage : https://github.com/gusdnd852
-"""
+
 from torchtext.data import Field, BucketIterator
 from torchtext.datasets.translation import Multi30k
-
 
 class DataLoader:
     source: Field = None
